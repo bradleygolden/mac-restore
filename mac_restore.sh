@@ -89,13 +89,17 @@ git config --global color.ui true
 # Create development environment
 mkdir ~/Development
 
-# Restore previous configurations using mackup
-# Make sure your storage service is installed first
-# If it's not, this will fail and will need to be ran later
-mackup restore
-
 # Clone all public repos into the development environment
 username=bradleygolden
 echo "cloning repos..."
 curl -o ~/Development —u $username -s https://api.github.com/users/$username/repos?per_page=200 | ruby -rubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["ssh_url"]} ]}'
 
+# Restore previous configurations using mackup
+# Make sure your storage service is installed first
+# If it's not, this will fail and will need to be ran later
+
+# First copy the mackup.cfg file to the correct directory
+cp ~/Development/mac-restore/.mackup.cfg ~
+
+# Run the restore for saved configurations
+mackup restore
