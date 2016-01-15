@@ -16,7 +16,7 @@ brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 
-# Install Bash 4
+# Install more recent version of Bash
 brew install bash
 
 # Install more recent versions of some OS X tools
@@ -68,6 +68,7 @@ apps=(
   dash
   java
   android-studio
+  xamarin
 )
 
 # Install apps to /Applications
