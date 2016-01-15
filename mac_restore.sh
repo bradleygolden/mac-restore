@@ -69,6 +69,7 @@ apps=(
   java
   android-studio
   xamarin
+  xamarin-android
 )
 
 # Install apps to /Applications
