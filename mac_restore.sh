@@ -70,6 +70,7 @@ apps=(
   android-studio
   xamarin
   xamarin-android
+  mono-mdk
 )
 
 # Install apps to /Applications
