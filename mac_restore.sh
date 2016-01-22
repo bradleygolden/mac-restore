@@ -41,6 +41,7 @@ binaries=(
   mackup
   rcm
   zsh
+  node
 )
 
 echo "installing binaries..."
