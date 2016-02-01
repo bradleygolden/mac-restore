@@ -69,9 +69,9 @@ apps=(
   dash
   java
   android-studio
-  xamarin
-  xamarin-android
-  mono-mdk
+  #xamarin
+  #xamarin-android
+  #mono-mdk
 )
 
 # Install apps to /Applications
