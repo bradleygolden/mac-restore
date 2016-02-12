@@ -84,6 +84,9 @@ sudo mv /etc/zshenv /etc/zprofile
 cat /etc/shells | grep zsh || which zsh | sudo tee -a /etc/shells
 chsh -s $(which zsh)
 
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # Use keychain for storing passwords
 git config --global credential.helper osxkeychain
 
