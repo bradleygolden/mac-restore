@@ -16,7 +16,7 @@ brew install coreutils
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 
-# Install Bash 4
+# Install more recent version of Bash
 brew install bash
 
 # Install more recent versions of some OS X tools
@@ -38,6 +38,7 @@ binaries=(
   git
   vim
   zsh
+  node
 )
 
 echo "installing binaries..."
@@ -70,6 +71,9 @@ brew cask install --appdir="/Applications" ${apps[@]}
 sudo mv /etc/zshenv /etc/zprofile
 cat /etc/shells | grep zsh || which zsh | sudo tee -a /etc/shells
 chsh -s $(which zsh)
+
+# Install oh-my-zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 # Use keychain for storing passwords
 git config --global credential.helper osxkeychain
