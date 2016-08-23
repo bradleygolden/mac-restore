@@ -34,12 +34,9 @@ brew cleanup
 # Binaries
 binaries=(
   python
+  python3
   git
   vim
-  macvim --overide-system-vim
-  tmux
-  mackup
-  rcm
   zsh
 )
 
@@ -48,6 +45,9 @@ brew install ${binaries[@]}
 
 brew cleanup
 
+# install Oh My Zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
 # Apps
 apps=(
   google-drive
@@ -55,19 +55,10 @@ apps=(
   flash
   silverlight
   vlc
-  dash
-  slack
-  spotify
   iterm2
   atom
-  microsoft-office
-  microsoft-lync
-  amazon-music
   flux
-  kindle
-  dash
-  java
-  android-studio
+  tower
 )
 
 # Install apps to /Applications
@@ -88,18 +79,3 @@ git config --global color.ui true
 
 # Create development environment
 mkdir ~/Development
-
-# Clone all public repos into the development environment
-username=bradleygolden
-echo "cloning repos..."
-curl -o ~/Development —u $username -s https://api.github.com/users/$username/repos?per_page=200 | ruby -rubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["ssh_url"]} ]}'
-
-# Restore previous configurations using mackup
-# Make sure your storage service is installed first
-# If it's not, this will fail and will need to be ran later
-
-# First copy the mackup.cfg file to the correct directory
-cp ~/Development/mac-restore/.mackup.cfg ~
-
-# Run the restore for saved configurations
-mackup restore
