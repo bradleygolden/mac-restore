@@ -53,13 +53,13 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 apps=(
   google-drive
   google-chrome
+  firefox
   flash
   silverlight
   vlc
   iterm2
   atom
   flux
-  tower
 )
 
 # Install apps to /Applications
