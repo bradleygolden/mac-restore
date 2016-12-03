@@ -39,6 +39,7 @@ binaries=(
   vim
   zsh
   node
+  mackup
 )
 
 echo "installing binaries..."
@@ -60,6 +61,7 @@ apps=(
   iterm2
   atom
   flux
+  dropbox
 )
 
 # Install apps to /Applications
@@ -78,5 +80,7 @@ git config --global credential.helper osxkeychain
 # You might not see colors without this
 git config --global color.ui true
 
-# Create development environment
+# Create development folder
 mkdir ~/Development
+
+# After installation, set up google drive or dropbox and use 'mackup restore'
